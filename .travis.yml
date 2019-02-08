@@ -8,11 +8,11 @@ install:
   - docker pull ubuntu:16.04
   - docker build -f leela-zero/Dockerfiles/Dockerfile.base -t leela-zero:base leela-zero
   - docker build -f leela-zero/Dockerfiles/Dockerfile.gpu -t leela-zero:gpu leela-zero
-  - docker build -f Dockerfile -t grp .
-  - sed -i \
-    -e '90s|^.*$|command = leela-zero/src/leelaz|' \
+  - sed \
+    -e '90s|^.*$|command = ./leelaz|' \
     -e '91s|^.*$|parameters = --gtp --noponder --weights best-network|' \
-    -e '96s|^.*$|command = leela-zero/src/leelaz|' \
+    -e '96s|^.*$|command = ./leelaz|' \
     -e '97s|^.*$|parameters = --gtp --noponder --weights best-network|' \
-    goreviewpartner/config.ini
+    goreviewpartner/config.ini > goreviewpartner/config.ini_ && mv goreviewpartner/config.ini_ goreviewpartner/config.ini
+  - docker build -f Dockerfile -t grp .
   - docker run grp
