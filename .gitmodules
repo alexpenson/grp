@@ -1,0 +1,6 @@
+[submodule "leela-zero"]
+	path = leela-zero
+	url = https://github.com/leela-zero/leela-zero
+[submodule "goreviewpartner"]
+	path = goreviewpartner
+	url = https://github.com/pnprog/goreviewpartner
