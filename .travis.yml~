@@ -18,6 +18,9 @@ jobs:
       - docker build -f Dockerfile.cpu -t leela-zero:cpu .
       - docker run leela-zero:cpu
     - script:
+      - docker build -f Dockerfile.grp -t grp .
+      - docker run grp
+    - script:
       - docker build -f Dockerfile.tests -t leela-zero:tests .
       - docker run leela-zero:tests
     - stage: style
