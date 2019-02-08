@@ -8,7 +8,8 @@ install:
   - docker pull ubuntu:16.04
   - docker build -f leela-zero/Dockerfiles/Dockerfile.base -t leela-zero:base leela-zero
   - docker build -f leela-zero/Dockerfiles/Dockerfile.gpu -t leela-zero:gpu leela-zero
-  - sed \
+  - |
+   sed \
     -e '90s|^.*$|command = ./leelaz|' \
     -e '91s|^.*$|parameters = --gtp --noponder --weights best-network|' \
     -e '96s|^.*$|command = ./leelaz|' \
