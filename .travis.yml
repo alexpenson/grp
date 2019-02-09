@@ -17,4 +17,4 @@ install:
     -e '97s|^.*$|parameters = --gtp --noponder --weights best-network|' \
     goreviewpartner/config.ini
   - docker build -t grp .
-  - docker run grp
+  - docker run grp example.sgf
