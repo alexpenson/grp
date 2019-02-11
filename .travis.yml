@@ -10,11 +10,11 @@ install:
   - docker build -f leela-zero/Dockerfiles/Dockerfile.gpu -t leela-zero:gpu leela-zero
   - curl -O https://zero.sjeng.org/best-network
   - |
-   sed -i \
-    -e '90s|^.*$|command = ./leelaz|' \
-    -e '91s|^.*$|parameters = --gtp --noponder --weights best-network|' \
-    -e '96s|^.*$|command = ./leelaz|' \
-    -e '97s|^.*$|parameters = --gtp --noponder --weights best-network|' \
-    goreviewpartner/config.ini
+   sed \
+    -e '93s|^.*$|command = ./leelaz|' \
+    -e '94s|^.*$|parameters = --gtp --noponder --weights best-network|' \
+    -e '99s|^.*$|command = ./leelaz|' \
+    -e '100s|^.*$|parameters = --gtp --noponder --weights best-network|' \
+    goreviewpartner/config.ini > config.ini
   - docker build -t grp .
   - docker run grp example.sgf
