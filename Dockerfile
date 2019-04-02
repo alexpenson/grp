@@ -6,5 +6,6 @@ COPY best-network .
 COPY goreviewpartner .
 COPY config.ini .
 RUN cmake --build . --target leelaz --config Release -- -j2
-ENTRYPOINT ["python2", "leela_zero_analysis.py", "--no-gui"]
-CMD ["example.sgf"]
+ENTRYPOINT ["/bin/bash"]
+# ENTRYPOINT ["python2", "leela_zero_analysis.py", "--no-gui"]
+# CMD ["example.sgf"]

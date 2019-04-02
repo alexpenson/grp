@@ -1,0 +1,8 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['pull', 'ubuntu:16.04']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-f', 'leela-zero/Dockerfiles/Dockerfile.base' ,'-t' ,'leela-zero:base' ,'leela-zero']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-f', 'leela-zero/Dockerfiles/Dockerfile.gpu' ,'-t' ,'leela-zero:gpu' ,'leela-zero']
+
